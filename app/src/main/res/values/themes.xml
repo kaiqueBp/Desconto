@@ -5,7 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">#A2B29F</item>
         <item name="colorPrimaryDark">#798777</item>
-        <item name="colorAccent">#BDD2B6</item>
+        <item name="colorAccent">#798777</item>
         <item name="android:colorBackground">@color/fundo</item>
         <item name="android:textColor">@color/black</item>
     </style>

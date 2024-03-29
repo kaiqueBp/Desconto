@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
         porcentagem = findViewById(R.id.idPorcentagem);
         progresso = findViewById(R.id.idseekBar);
         calculo();
-
-
     }
 
     public void calculo() {
@@ -38,16 +36,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 porcentagem.setText(i + "%");
-                Float resultado = Float.parseFloat(String.valueOf(valor.getText()));
-                Float desc = (resultado * i) / 100;
-                DecimalFormat decimal= new DecimalFormat("0.00");
-                desconto.setText("R$ " + decimal.format(desc));
-                total.setText("R$ " + decimal.format((resultado - desc)));
+                String valorTexto = String.valueOf(valor.getText());
+                if (!valorTexto.isEmpty()) {
+                    Float resultado = Float.parseFloat(valorTexto);
+                    Float desc = (resultado * i) / 100;
+                    DecimalFormat decimal= new DecimalFormat("0.00");
+                    desconto.setText("R$ " + decimal.format(desc));
+                    total.setText("R$ " + decimal.format((resultado - desc)));
+                }
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
@@ -57,5 +57,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    ;
 }
